@@ -1,6 +1,6 @@
 package org.nhnacademy.races;
 
-public enum Zerg {
+public enum ZergUnits {
     Zergling(2,2),
     Hydralisk(3,7),
     Ultralisk(5,15),
@@ -9,7 +9,7 @@ public enum Zerg {
     private final int def;
     private final int atk;
 
-    Zerg(int def, int atk)
+    ZergUnits(int def, int atk)
     {
         this.def=def;
         this.atk=atk;
