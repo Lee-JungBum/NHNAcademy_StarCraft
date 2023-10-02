@@ -1,4 +1,4 @@
-package org.nhnacademy.races;
+package org.nhnacademy.races.unit;
 
 public enum ProtosUnits {
     Zealot(5,20),
