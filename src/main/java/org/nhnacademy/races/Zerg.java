@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Random;
 import org.nhnacademy.races.unit.ProtosUnits;
 import org.nhnacademy.races.unit.Unit;
+import org.nhnacademy.races.unit.ZergUnits;
+import org.nhnacademy.races.unit.protosUnits.*;
+import org.nhnacademy.races.unit.zergUnits.*;
 
-public class Protos implements Races {
+public class Zerg implements Races{
     private List<Unit> units;
-    private final int MAX_UNIT = 4;
-
-    public Protos() {
+    private final int MAX_UNIT=8;
+    public Zerg() {
         units = new ArrayList<>();
         Random random = new Random();
 
@@ -29,13 +31,12 @@ public class Protos implements Races {
             }
         }
     }
-
     private String getRandomUnitClassName(Random random) {
 
 
+        String randomPackageName = "org.nhnacademy.races.unit.zergUnits";
 
-        String randomPackageName = "org.nhnacademy.races.unit.protosUnits";
-        String path = "src/main/java/org/nhnacademy/races/unit/protosUnits";
+        String path = "src/main/java/org/nhnacademy/races/unit/zergUnits";
         File dir = new File(path);
         String[] filenames = dir.list();
 
@@ -46,23 +47,20 @@ public class Protos implements Races {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        int i = 0;
-        for (Unit unit : units) {
+        int i=0;
+        for(Unit unit:units) {
             stringBuilder.append(i++).append(". ").append(unit).append("\n");
         }
         return stringBuilder.toString();
     }
-
     @Override
     public int getMaxUnit() {
         return MAX_UNIT;
     }
-
     @Override
     public Unit getUnits(int i) {
         return units.get(i);
     }
-
     @Override
     public void removeUnit(int i) {
         units.remove(i);

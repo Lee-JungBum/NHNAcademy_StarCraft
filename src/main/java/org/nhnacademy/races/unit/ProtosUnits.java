@@ -6,10 +6,10 @@ public enum ProtosUnits {
     HighTempler(10,2),
     Scout(5,10),
     Corsair(4,12);
-    private final int def;
     private final int atk;
+    private final int def;
 
-    ProtosUnits(int def, int atk)
+    ProtosUnits( int atk,int def)
     {
         this.def=def;
         this.atk=atk;
