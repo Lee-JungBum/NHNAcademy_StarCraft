@@ -1,25 +1,14 @@
 package org.nhnacademy.races;
 
-import java.util.Random;
+import java.util.List;
+import org.nhnacademy.races.unit.Unit;
 
-public enum Races {
-    ZERG("ZERG"),
-    PROTOS("PROTOS"),
-    TERRAN("TERRAN");
-    String races;
-    Races(String races)
-    {
-        this.races=races;
-    }
-    private static final Random random = new Random();
+public interface Races {
+    int getMaxUnit();
 
-    public String getRaces() {
-        return races;
-    }
+    Unit getUnits(int i);
 
-    public static Races randomSelect()  {
-        Races[] races = values();
-        return races[random.nextInt(races.length)];
-    }
+    void removeUnit(int i);
 
+    int getSize();
 }
