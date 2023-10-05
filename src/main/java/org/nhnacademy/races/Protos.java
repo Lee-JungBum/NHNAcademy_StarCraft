@@ -16,7 +16,7 @@ public class Protos implements Races {
         Random random = new Random();
 
         for (int i = 0; i < MAX_UNIT; i++) {
-            String randomUnitClassName = getRandomUnitClassName(random);
+            String randomUnitClassName = unitClassName(random);
 
             try {
                 // Reflection을 사용하여 클래스 동적으로 로드
@@ -30,8 +30,7 @@ public class Protos implements Races {
         }
     }
 
-    private String getRandomUnitClassName(Random random) {
-
+    public String unitClassName(Random random) {
 
 
         String randomPackageName = "org.nhnacademy.races.unit.protosUnits";
@@ -40,7 +39,8 @@ public class Protos implements Races {
         String[] filenames = dir.list();
 
         String randomClassName = filenames[random.nextInt(filenames.length)];
-        return randomPackageName + "." + randomClassName.substring(0,randomClassName.length()-5);
+        return randomPackageName + "." + randomClassName.substring(0, randomClassName.length() - 5);
+
     }
 
     @Override
@@ -51,11 +51,6 @@ public class Protos implements Races {
             stringBuilder.append(i++).append(". ").append(unit).append("\n");
         }
         return stringBuilder.toString();
-    }
-
-    @Override
-    public int getMaxUnit() {
-        return MAX_UNIT;
     }
 
     @Override

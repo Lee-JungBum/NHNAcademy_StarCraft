@@ -18,7 +18,7 @@ public class Zerg implements Races{
         Random random = new Random();
 
         for (int i = 0; i < MAX_UNIT; i++) {
-            String randomUnitClassName = getRandomUnitClassName(random);
+            String randomUnitClassName = unitClassName(random);
 
             try {
                 // Reflection을 사용하여 클래스 동적으로 로드
@@ -31,7 +31,7 @@ public class Zerg implements Races{
             }
         }
     }
-    private String getRandomUnitClassName(Random random) {
+    private String unitClassName(Random random) {
 
 
         String randomPackageName = "org.nhnacademy.races.unit.zergUnits";
@@ -52,10 +52,6 @@ public class Zerg implements Races{
             stringBuilder.append(i++).append(". ").append(unit).append("\n");
         }
         return stringBuilder.toString();
-    }
-    @Override
-    public int getMaxUnit() {
-        return MAX_UNIT;
     }
     @Override
     public Unit getUnits(int i) {
