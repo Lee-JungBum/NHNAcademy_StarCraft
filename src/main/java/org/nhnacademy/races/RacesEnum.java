@@ -3,10 +3,10 @@ package org.nhnacademy.races;
 import java.util.Random;
 
 public enum RacesEnum {
-    ZERG("ZERG"),
+    prZERG("ZERG"),
     PROTOS("PROTOS"),
     TERRAN("TERRAN");
-    String races;
+    private final String races;
     RacesEnum(String races)
     {
         this.races=races;
