@@ -10,7 +10,6 @@ public abstract class Unit {
 
 
     public void damage(int damage) {
-        System.out.println(def+" "+damage);
         this.def = this.def - damage;
     }
 
@@ -33,6 +32,6 @@ public abstract class Unit {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()+"(현재 방어력: "+def+")";
+        return getClass().getSimpleName() + "(현재 방어력: " + def + ")";
     }
 }
