@@ -2,10 +2,10 @@ package org.nhnacademy.races.unit.zergUnits;
 
 import org.nhnacademy.races.unit.Flyable;
 import org.nhnacademy.races.unit.Unit;
-import org.nhnacademy.races.unit.ZergUnits;
+import org.nhnacademy.races.unit.ZergUnitProperties;
 
 public class Guardian extends Unit implements Flyable {
     public Guardian() {
-        super(ZergUnits.Guardian.getAtk(), ZergUnits.Guardian.getDef());
+        super(ZergUnitProperties.Guardian.getAtk(), ZergUnitProperties.Guardian.getDef());
     }
 }

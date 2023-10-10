@@ -3,7 +3,7 @@ package org.nhnacademy.races;
 import java.util.Random;
 
 public enum RacesEnum {
-    prZERG("ZERG"),
+    ZERG("ZERG"),
     PROTOS("PROTOS"),
     TERRAN("TERRAN");
     private final String races;

@@ -1,10 +1,10 @@
 package org.nhnacademy.races.unit.terranUnits;
 
-import org.nhnacademy.races.unit.TerranUnits;
+import org.nhnacademy.races.unit.TerranUnitProperties;
 import org.nhnacademy.races.unit.Unit;
 
 public class Marine extends Unit {
     public Marine() {
-        super(TerranUnits.Marine.getAtk(), TerranUnits.Marine.getDef());
+        super(TerranUnitProperties.Marine.getAtk(), TerranUnitProperties.Marine.getDef());
     }
 }

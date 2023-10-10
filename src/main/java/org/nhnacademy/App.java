@@ -91,6 +91,7 @@ public class App {
 
     private static boolean attackCondition(int myUnitNumber, int youUnitNumber, Player player1, Player player2) {
         if (!unitNumberCheck(myUnitNumber, youUnitNumber)) {
+
             return false;
         }
         if (!flyAttackCheck(myUnitNumber, youUnitNumber, player1, player2)) {
