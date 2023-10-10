@@ -4,6 +4,6 @@ import org.nhnacademy.races.unit.*;
 
 public class Hydralisk extends Unit implements FlyAttacker {
     public Hydralisk() {
-        super(ZergUnits.Hydralisk.getAtk(), ZergUnits.Hydralisk.getDef());
+        super(ZergUnitProperties.Hydralisk.getAtk(), ZergUnitProperties.Hydralisk.getDef());
     }
 }

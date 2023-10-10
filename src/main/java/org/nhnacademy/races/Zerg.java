@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Random;
 import org.nhnacademy.races.unit.ProtosUnits;
 import org.nhnacademy.races.unit.Unit;
-import org.nhnacademy.races.unit.ZergUnits;
-import org.nhnacademy.races.unit.protosUnits.*;
-import org.nhnacademy.races.unit.zergUnits.*;
 
 public class Zerg implements Races{
     private List<Unit> units;
