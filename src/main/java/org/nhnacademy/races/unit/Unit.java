@@ -1,8 +1,6 @@
 package org.nhnacademy.races.unit;
 
 public abstract class Unit {
-    private Unit() {
-    }
 
     private int atk;
 
@@ -11,10 +9,6 @@ public abstract class Unit {
 
     public void damage(int damage) {
         this.def = this.def - damage;
-    }
-
-    public int life() {
-        return def;
     }
 
     public int attack() {
