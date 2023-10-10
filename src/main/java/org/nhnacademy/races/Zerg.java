@@ -4,12 +4,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import org.nhnacademy.races.unit.ProtosUnits;
 import org.nhnacademy.races.unit.Unit;
 
 public class Zerg implements Races{
     private List<Unit> units;
     private final int MAX_UNIT=8;
+
     public Zerg() {
         units = new ArrayList<>();
         Random random = new Random();

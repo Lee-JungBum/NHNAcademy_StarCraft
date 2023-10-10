@@ -3,11 +3,7 @@ package org.nhnacademy;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import org.nhnacademy.races.Protos;
-import org.nhnacademy.races.Races;
 import org.nhnacademy.races.RacesEnum;
-import org.nhnacademy.races.unit.FlyAttacker;
-import org.nhnacademy.races.unit.Flyable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -94,7 +90,7 @@ public class App {
 
             return false;
         }
-        if (!flyAttackCheck(myUnitNumber, youUnitNumber, player1, player2)) {
+        if (player1.getRaces().getUnits(myUnitNumber).attack(youUnitNumber,computer)) {
             return false;
         }
         if (!unitDieCheck(myUnitNumber, youUnitNumber)) {
@@ -111,15 +107,6 @@ public class App {
         return true;
     }
 
-    private static boolean flyAttackCheck(int myUnitNumber, int youUnitNumber, Player player1, Player player2) {
-        if (player2.getRaces().getUnits(youUnitNumber) instanceof Flyable) {
-            if (!(player1.getRaces().getUnits(myUnitNumber) instanceof Flyable || player1.getRaces().getUnits(myUnitNumber) instanceof FlyAttacker)) {
-                logger.info("{}은 {}공격이 불가능합니다.", player1.getRaces().getUnits(myUnitNumber).toString(), player2.getRaces().getUnits(youUnitNumber).toString());
-                return false;
-            }
-        }
-        return true;
-    }
 
     private static boolean unitDieCheck(int myUnitNumber, int youUnitNumber) {
         if (

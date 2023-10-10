@@ -6,6 +6,6 @@ import org.nhnacademy.races.unit.ZergUnitProperties;
 
 public class Guardian extends Unit implements Flyable {
     public Guardian() {
-        super(ZergUnitProperties.Guardian.getAtk(), ZergUnitProperties.Guardian.getDef());
+        super(ZergUnitProperties.Guardian.getAttack(), ZergUnitProperties.Guardian.getDefence());
     }
 }

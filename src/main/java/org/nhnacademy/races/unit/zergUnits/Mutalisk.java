@@ -6,6 +6,6 @@ import org.nhnacademy.races.unit.ZergUnitProperties;
 
 public class Mutalisk extends Unit implements Flyable {
     public Mutalisk() {
-        super(ZergUnitProperties.Mutalisk.getAtk(), ZergUnitProperties.Hydralisk.getDef());
+        super(ZergUnitProperties.Mutalisk.getAttack(), ZergUnitProperties.Hydralisk.getDefence());
     }
 }
