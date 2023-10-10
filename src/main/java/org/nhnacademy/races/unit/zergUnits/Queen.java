@@ -6,6 +6,6 @@ import org.nhnacademy.races.unit.Unit;
 
 public class Queen extends Unit implements Flyable {
     public Queen() {
-        super(BroodWar.Queen.getAtk(), BroodWar.Queen.getDef());
+        super(BroodWar.Queen.getAttack(), BroodWar.Queen.getDefence());
     }
 }

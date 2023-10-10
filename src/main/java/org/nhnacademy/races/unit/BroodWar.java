@@ -4,20 +4,20 @@ public enum BroodWar {
     BattleCruzer(20,30),
     Carrier(25,40),
     Queen(15,25);
-    private final int def;
-    private final int atk;
+    private final int defence;
+    private final int attack;
 
-    BroodWar(int atk,int def)
+    BroodWar(int attack,int defence)
     {
-        this.def=def;
-        this.atk=atk;
+        this.defence=defence;
+        this.attack=attack;
     }
 
-    public int getDef() {
-        return def;
+    public int getDefence() {
+        return defence;
     }
 
-    public int getAtk() {
-        return atk;
+    public int getAttack() {
+        return attack;
     }
 }
