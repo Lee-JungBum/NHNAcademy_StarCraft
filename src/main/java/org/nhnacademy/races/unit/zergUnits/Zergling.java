@@ -5,6 +5,6 @@ import org.nhnacademy.races.unit.ZergUnitProperties;
 
 public class Zergling extends Unit {
     public Zergling() {
-        super(ZergUnitProperties.Zergling.getAtk(), ZergUnitProperties.Zergling.getDef());
+        super(ZergUnitProperties.Zergling.getAttack(), ZergUnitProperties.Zergling.getDefence());
     }
 }

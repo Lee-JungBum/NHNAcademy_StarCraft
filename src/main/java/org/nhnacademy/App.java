@@ -3,11 +3,7 @@ package org.nhnacademy;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import org.nhnacademy.races.Protos;
-import org.nhnacademy.races.Races;
 import org.nhnacademy.races.RacesEnum;
-import org.nhnacademy.races.unit.FlyAttacker;
-import org.nhnacademy.races.unit.Flyable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -71,6 +67,9 @@ public class App {
             myUnitNumber = Integer.parseInt(stringTokenizer.nextToken());
             youUnitNumber = Integer.parseInt(stringTokenizer.nextToken());
             if (attackCondition(myUnitNumber, youUnitNumber, user, computer)) {
+                if(!user.getRaces().getUnits(myUnitNumber).attack(youUnitNumber,computer)){
+                    continue;
+                }
                 break;
             }
         }
@@ -83,6 +82,7 @@ public class App {
             myUnitNumber = new Random().nextInt(user.getRaces().getSize());
             youUnitNumber = new Random().nextInt(computer.getRaces().getSize());
             if (attackCondition(myUnitNumber, youUnitNumber, computer, user)) {
+                computer.getRaces().getUnits(youUnitNumber).attack(myUnitNumber,user);
                 break;
             }
 
@@ -94,9 +94,7 @@ public class App {
 
             return false;
         }
-        if (!flyAttackCheck(myUnitNumber, youUnitNumber, player1, player2)) {
-            return false;
-        }
+
         if (!unitDieCheck(myUnitNumber, youUnitNumber)) {
             return false;
         }
@@ -111,15 +109,6 @@ public class App {
         return true;
     }
 
-    private static boolean flyAttackCheck(int myUnitNumber, int youUnitNumber, Player player1, Player player2) {
-        if (player2.getRaces().getUnits(youUnitNumber) instanceof Flyable) {
-            if (!(player1.getRaces().getUnits(myUnitNumber) instanceof Flyable || player1.getRaces().getUnits(myUnitNumber) instanceof FlyAttacker)) {
-                logger.info("{}은 {}공격이 불가능합니다.", player1.getRaces().getUnits(myUnitNumber).toString(), player2.getRaces().getUnits(youUnitNumber).toString());
-                return false;
-            }
-        }
-        return true;
-    }
 
     private static boolean unitDieCheck(int myUnitNumber, int youUnitNumber) {
         if (
@@ -145,7 +134,6 @@ public class App {
     }
 
     private static boolean turn(Player my, Player you, int myUnitNumber, int youUnitNumber) {
-        you.getRaces().getUnits(youUnitNumber).damage(my.getRaces().getUnits(myUnitNumber).attack());
         for (int i = 0; i < you.getRaces().getSize(); i++) {
             if (you.getRaces().getUnits(i).isDie()) {
                 you.getRaces().removeUnit(i);
