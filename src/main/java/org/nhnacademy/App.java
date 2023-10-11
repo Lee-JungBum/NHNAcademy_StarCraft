@@ -67,6 +67,9 @@ public class App {
             myUnitNumber = Integer.parseInt(stringTokenizer.nextToken());
             youUnitNumber = Integer.parseInt(stringTokenizer.nextToken());
             if (attackCondition(myUnitNumber, youUnitNumber, user, computer)) {
+                if(!user.getRaces().getUnits(myUnitNumber).attack(youUnitNumber,computer)){
+                    continue;
+                }
                 break;
             }
         }
@@ -79,6 +82,7 @@ public class App {
             myUnitNumber = new Random().nextInt(user.getRaces().getSize());
             youUnitNumber = new Random().nextInt(computer.getRaces().getSize());
             if (attackCondition(myUnitNumber, youUnitNumber, computer, user)) {
+                computer.getRaces().getUnits(youUnitNumber).attack(myUnitNumber,user);
                 break;
             }
 
@@ -90,9 +94,7 @@ public class App {
 
             return false;
         }
-        if (player1.getRaces().getUnits(myUnitNumber).attack(youUnitNumber,computer)) {
-            return false;
-        }
+
         if (!unitDieCheck(myUnitNumber, youUnitNumber)) {
             return false;
         }
@@ -132,7 +134,6 @@ public class App {
     }
 
     private static boolean turn(Player my, Player you, int myUnitNumber, int youUnitNumber) {
-        you.getRaces().getUnits(youUnitNumber).damage(my.getRaces().getUnits(myUnitNumber).attack());
         for (int i = 0; i < you.getRaces().getSize(); i++) {
             if (you.getRaces().getUnits(i).isDie()) {
                 you.getRaces().removeUnit(i);
