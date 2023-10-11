@@ -5,6 +5,6 @@ import org.nhnacademy.races.unit.Unit;
 
 public class Tank extends Unit {
     public Tank() {
-        super(TerranUnitProperties.Tank.getAtk(), TerranUnitProperties.Tank.getDef());
+        super(TerranUnitProperties.Tank.getAttack(), TerranUnitProperties.Tank.getDefence());
     }
 }
