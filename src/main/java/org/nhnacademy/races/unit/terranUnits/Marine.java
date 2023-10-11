@@ -5,6 +5,6 @@ import org.nhnacademy.races.unit.Unit;
 
 public class Marine extends Unit {
     public Marine() {
-        super(TerranUnitProperties.Marine.getAtk(), TerranUnitProperties.Marine.getDef());
+        super(TerranUnitProperties.Marine.getAttack(), TerranUnitProperties.Marine.getDefence());
     }
 }

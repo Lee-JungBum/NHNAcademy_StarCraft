@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import org.nhnacademy.races.unit.ProtosUnits;
 import org.nhnacademy.races.unit.Unit;
 
-public class Protos implements Races {
+public class
+Protos implements Races {
     private List<Unit> units;
     private final int MAX_UNIT = 4;
 

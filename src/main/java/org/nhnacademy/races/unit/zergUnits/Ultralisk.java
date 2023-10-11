@@ -5,6 +5,6 @@ import org.nhnacademy.races.unit.ZergUnitProperties;
 
 public class Ultralisk extends Unit {
     public Ultralisk() {
-        super(ZergUnitProperties.Ultralisk.getAtk(), ZergUnitProperties.Ultralisk.getDef());
+        super(ZergUnitProperties.Ultralisk.getAttack(), ZergUnitProperties.Ultralisk.getDefence());
     }
 }

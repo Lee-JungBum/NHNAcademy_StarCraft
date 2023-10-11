@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import org.nhnacademy.races.unit.ProtosUnits;
 import org.nhnacademy.races.unit.Unit;
 
 public class Terran implements Races{
